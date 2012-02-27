@@ -11,24 +11,22 @@
 @implementation ConditionValue
 
 @synthesize predicateMenu;
-@synthesize valueField;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
 	
     if( nil != (self = [super initWithNibName:nibNameOrNil	bundle:nibBundleOrNil]))
     {
-		[self setName: @"Value"];
+		[self setPluginName: @"Value"]; 
     }
     return self;
 }
 
-- (BOOL) hasSelectorField {
-	return YES;
+- (NSString *) predicate {
+	return [[[self predicateMenu] titleOfSelectedItem] lowercaseString];
 }
 
-
-- (NSString *) predicate {
-	return @"";
+- (NSString *) expression {
+	return [NSString stringWithFormat:@".('%@').val('%@')",[[self selectorField] stringValue],[[self valueOfField] stringValue]];
 }
 
 @end

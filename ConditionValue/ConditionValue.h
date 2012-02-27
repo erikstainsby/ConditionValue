@@ -6,11 +6,11 @@
 //  Copyright (c) 2012 Roaring Sky. All rights reserved.
 //
 
-#import <RSTrixiePlugin/RSTrixiePlugin.h>
+#import <RSTrixiePlugin/RSConditionPlugin.h>
 
-@interface ConditionValue : RSTrixiePlugin
+@interface ConditionValue : RSConditionPlugin
 
 @property (retain) IBOutlet NSPopUpButton * predicateMenu;
-@property (retain) IBOutlet NSTextField * valueField;
+
 
 @end
